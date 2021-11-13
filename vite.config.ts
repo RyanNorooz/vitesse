@@ -18,11 +18,20 @@ import LinkAttributes from 'markdown-it-link-attributes'
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // additionalData: `@import '@/styles/Variables.scss'; @import '@/styles/Mixins.scss';`,
+      },
     },
   },
+
+  resolve: {
+    alias: [
+      { find: /^@(?=\/)/, replacement: path.resolve(__dirname, './src') },
+    ],
+  },
+
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
@@ -45,6 +54,8 @@ export default defineConfig({
         '@vueuse/head',
         '@vueuse/core',
       ],
+
+      // type definitions
       dts: 'src/auto-imports.d.ts',
     }),
 
@@ -66,6 +77,7 @@ export default defineConfig({
         }),
       ],
 
+      // type definitions
       dts: 'src/components.d.ts',
     }),
 
@@ -155,14 +167,7 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    include: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-      '@vueuse/head',
-    ],
-    exclude: [
-      'vue-demi',
-    ],
+    include: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
+    exclude: [],
   },
 })
