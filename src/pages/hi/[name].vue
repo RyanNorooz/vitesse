@@ -20,28 +20,23 @@ watchEffect(() => {
       {{ t('intro.hi', { name: props.name }) }}
     </p>
 
-    <p class="text-sm opacity-50">
+    <p class="mb-8 text-sm opacity-50">
       <em>{{ t('intro.dynamic-route') }}</em>
     </p>
 
     <template v-if="mainStore.otherNames.length">
-      <p class="text-sm mt-4">
-        <span class="opacity-75">{{ t('intro.aka') }}:</span>
-        <ul>
-          <li v-for="otherName in mainStore.otherNames" :key="otherName">
-            <router-link :to="`/hi/${otherName}`" replace>
-              {{ otherName }}
-            </router-link>
-          </li>
-        </ul>
-      </p>
+      <span class="opacity-75">{{ t('intro.aka') }}:</span>
+      <ul>
+        <li v-for="otherName in mainStore.otherNames" :key="otherName">
+          <router-link :to="`/hi/${otherName}`" replace>
+            {{ otherName }}
+          </router-link>
+        </li>
+      </ul>
     </template>
 
     <div>
-      <button
-        class="btn m-3 text-sm mt-6"
-        @click="router.back()"
-      >
+      <button class="m-3 mt-6 text-sm btn" @click="router.back()">
         {{ t('button.back') }}
       </button>
     </div>
