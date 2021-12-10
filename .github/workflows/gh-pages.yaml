@@ -35,6 +35,10 @@ jobs:
       - name: Install deps 📦
         run: pnpm i
 
+      - name: Set ENV variables 📝
+        if: ${{ github.event.repository.name }} != ${{ github.repository_owner }}.github.io
+        run: echo ::set-env BASE_URL=/${{ github.event.repository.name }}/
+
       - name: Build 🔨
         run: |
           pnpm build
