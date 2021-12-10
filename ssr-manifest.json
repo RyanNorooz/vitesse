@@ -338,16 +338,16 @@
     "/assets/virtual_pwa-register.bbb77b58.js"
   ],
   "src/pages/about.md": [
-    "/assets/about.43035729.js"
+    "/assets/about.90793c39.js"
   ],
   "src/pages/README.md": [
     "/assets/README.8e8c4344.js"
   ],
   "~icons/carbon/pedestrian": [
-    "/assets/_name_.474d6db7.js"
+    "/assets/_name_.047e8771.js"
   ],
   "src/pages/hi/[name].vue": [
-    "/assets/_name_.474d6db7.js"
+    "/assets/_name_.047e8771.js"
   ],
   "src/pages/[...all].vue?vue&type=route&index=0&lang.yaml": [
     "/assets/_...all_.c00f980b.js"
@@ -356,12 +356,12 @@
     "/assets/_...all_.c00f980b.js"
   ],
   "~icons/carbon/warning": [
-    "/assets/404.067ccddc.js"
+    "/assets/404.d6be0b53.js"
   ],
   "src/layouts/404.vue": [
-    "/assets/404.067ccddc.js"
+    "/assets/404.d6be0b53.js"
   ],
   "src/layouts/home.vue": [
-    "/assets/home.36087e8b.js"
+    "/assets/home.d9f6dfa8.js"
   ]
 }
